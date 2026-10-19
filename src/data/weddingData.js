@@ -38,8 +38,7 @@ export const events = [
   { id: 'haldi', name: 'Haldi', start: '2026-11-23T12:30:00+05:30', time: '12:30 PM', spot: 'Main Lawn', accent: '#C98A00', icon: 'sun', image: asset('cards/haldi.jpg') },
   { id: 'sangeet', name: 'Sangeet', start: '2026-11-23T18:30:00+05:30', time: '6:30 PM', spot: 'Main Lawn', accent: '#8C1D3F', icon: 'music', image: asset('cards/sangeet.jpg') },
   { id: 'mayra', name: 'Mayra', start: '2026-11-24T10:00:00+05:30', time: '10 AM', spot: 'Banquet Hall', accent: '#C2447A', icon: 'flower', image: asset('cards/mayra.jpg') },
-  { id: 'reception', name: 'Reception', start: '2026-11-24T19:00:00+05:30', time: '7 PM', spot: 'Main Lawn', accent: '#8C1D3F', icon: 'lamp', image: asset('cards/reception-phera.jpg') },
-  { id: 'phera', name: 'Phera', start: '2026-11-24T23:30:00+05:30', time: '11:30 PM', spot: 'Poolside', accent: '#A6192E', icon: 'fire', image: asset('cards/reception-phera.jpg') },
+  { id: 'reception-phera', name: 'Reception & Phera', start: '2026-11-24T19:00:00+05:30', time: '7 PM onwards', spot: 'Main Lawn & Poolside', accent: '#8C1D3F', icon: 'lamp', image: asset('cards/reception-phera.jpg') },
 ]
 
 export const blessings = [
