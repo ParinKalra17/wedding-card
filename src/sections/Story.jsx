@@ -1,12 +1,19 @@
 import SectionHead from '../components/SectionHead.jsx'
 import { couple, blessings } from '../data/weddingData.js'
 
+const petals = Array.from({ length: 18 }, (_, i) => i)
+
 export default function Story() {
   return (
     <section id="story" className="band alt" aria-labelledby="story-h">
       <div className="section">
         <SectionHead id="story-h" title="Our Story" sub="Two families, one celebration." />
         <div className="story-photo-wrap" data-reveal>
+          <div className="story-petals" aria-hidden="true">
+            {petals.map((i) => (
+              <span key={i} className={`petal petal-${i % 6}`} style={{ '--i': i }} />
+            ))}
+          </div>
           <div className="story-photo-frame">
             <img src={`${import.meta.env.BASE_URL}images/cards/couple.jpg`} alt={`${couple.groom} & ${couple.bride}`} loading="lazy" />
           </div>

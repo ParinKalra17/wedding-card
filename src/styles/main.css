@@ -699,7 +699,8 @@ main:focus {
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  margin-bottom: 3rem
+  margin-bottom: 3rem;
+  position: relative
 }
 
 .story-photo-frame {
@@ -708,7 +709,9 @@ main:focus {
   padding: 10px;
   border: 1.5px solid var(--gold);
   background: var(--paper);
-  box-shadow: 0 0 0 6px var(--ivory), 0 0 0 7px var(--line), 0 30px 60px -20px rgba(78, 45, 14, .4)
+  box-shadow: 0 0 0 6px var(--ivory), 0 0 0 7px var(--line), 0 30px 60px -20px rgba(78, 45, 14, .4);
+  position: relative;
+  z-index: 2
 }
 
 .story-photo-frame img {
@@ -718,7 +721,9 @@ main:focus {
 }
 
 .story-names {
-  text-align: center
+  text-align: center;
+  position: relative;
+  z-index: 2
 }
 
 .story-names span {
@@ -728,10 +733,134 @@ main:focus {
   margin: 0 .3rem
 }
 
+/* flower petals */
+.story-petals {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible
+}
+
+.petal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 22px;
+  border-radius: 50% 0 50% 0;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  will-change: transform, opacity
+}
+
+/* 6 petal color variants — rose, marigold, blush, saffron, jasmine, coral */
+.petal-0 { background: radial-gradient(ellipse at 30% 30%, #e8a0b4, #c2447a); }
+.petal-1 { background: radial-gradient(ellipse at 30% 30%, #f0c96d, #d4a017); }
+.petal-2 { background: radial-gradient(ellipse at 30% 30%, #f3d1d8, #e8a0b4); }
+.petal-3 { background: radial-gradient(ellipse at 30% 30%, #f0a830, #c98a00); }
+.petal-4 { background: radial-gradient(ellipse at 30% 30%, #fff5e6, #f0dfc0); border: 1px solid rgba(184,134,43,.3); }
+.petal-5 { background: radial-gradient(ellipse at 30% 30%, #f0a078, #c2447a); }
+
+/* animate only when revealed */
+.story-photo-wrap.in .petal {
+  animation: petalBurst 2.8s cubic-bezier(.22, .6, .36, 1) forwards;
+  animation-delay: calc(var(--i) * 0.09s)
+}
+
+@keyframes petalBurst {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0) rotate(0deg)
+  }
+  15% {
+    opacity: .95;
+    transform:
+      translate(
+        calc(-50% + (var(--i) * 37px - 310px)),
+        calc(-50% + (var(--i) * 29px - 260px))
+      )
+      scale(1)
+      rotate(calc(var(--i) * 40deg))
+  }
+  55% {
+    opacity: .7;
+    transform:
+      translate(
+        calc(-50% + (var(--i) * 45px - 380px)),
+        calc(-50% + (var(--i) * 35px - 200px) + 40px)
+      )
+      scale(1.1)
+      rotate(calc(var(--i) * 60deg + 90deg))
+  }
+  100% {
+    opacity: 0;
+    transform:
+      translate(
+        calc(-50% + (var(--i) * 50px - 420px)),
+        calc(-50% + (var(--i) * 40px - 120px) + 100px)
+      )
+      scale(.6)
+      rotate(calc(var(--i) * 80deg + 180deg))
+  }
+}
+
+/* extra petal scatter: use nth-child to vary trajectories */
+.petal:nth-child(odd) { width: 14px; height: 18px; border-radius: 0 50% 0 50% }
+.petal:nth-child(3n) { width: 20px; height: 12px; border-radius: 50% }
+.petal:nth-child(4n+1) { width: 16px; height: 24px }
+
+.story-photo-wrap.in .petal:nth-child(odd) {
+  animation-name: petalDrift;
+  animation-duration: 3.2s
+}
+
+@keyframes petalDrift {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0) rotate(0deg)
+  }
+  12% {
+    opacity: .9;
+    transform:
+      translate(
+        calc(-50% + (var(--i) * -42px + 340px)),
+        calc(-50% + (var(--i) * 33px - 300px))
+      )
+      scale(1.05)
+      rotate(calc(var(--i) * -35deg))
+  }
+  50% {
+    opacity: .65;
+    transform:
+      translate(
+        calc(-50% + (var(--i) * -50px + 400px)),
+        calc(-50% + (var(--i) * 40px - 180px) + 50px)
+      )
+      scale(.9)
+      rotate(calc(var(--i) * -55deg - 60deg))
+  }
+  100% {
+    opacity: 0;
+    transform:
+      translate(
+        calc(-50% + (var(--i) * -55px + 440px)),
+        calc(-50% + (var(--i) * 45px - 80px) + 130px)
+      )
+      scale(.4)
+      rotate(calc(var(--i) * -80deg - 160deg))
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .petal { display: none }
+}
+
 @media(max-width:560px) {
   .story-photo-frame {
     max-width: 320px
   }
+  .petal { width: 12px; height: 16px }
 }
 
 /* placeholder tiles */
