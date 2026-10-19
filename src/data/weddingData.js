@@ -20,7 +20,7 @@ export const couple = {
 export const venue = {
   name: 'The Marutinandan Grand',
   city: 'Nathdwara',
-  address: '[Add full street address]', // card lists only name + city
+  address: '[The Marutinandan Grand, Near Shrinath ji Temple, NH 48, Sukher Industrial Area,Udaipur, Nathdwara, Rajasthan 313301]', // card lists only name + city
   mapsQuery: 'The Marutinandan Grand Nathdwara',
 }
 export const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(venue.mapsQuery)}`

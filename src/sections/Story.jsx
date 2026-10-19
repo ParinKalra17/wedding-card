@@ -1,31 +1,16 @@
 import SectionHead from '../components/SectionHead.jsx'
-import Placeholder from '../components/Placeholder.jsx'
-import { story, blessings, couple } from '../data/weddingData.js'
-
-function Person({ p, flip }) {
-  return (
-    <article className={`person ${flip ? 'flip' : ''}`} data-reveal>
-      <div className="person-photo">
-        {p.photo ? <img src={p.photo} alt={p.name} loading="lazy" /> : <Placeholder label={p.name} />}
-      </div>
-      <div>
-        <h3 className="script-md">{p.name}</h3>
-        {p.line && <p className="gold">{p.line}</p>}
-        <p>{p.family}</p>
-        {p.bio ? <p>{p.bio}</p> : <p className="todo">[Add {p.name}’s introduction in src/data/weddingData.js]</p>}
-      </div>
-    </article>
-  )
-}
+import { couple, blessings } from '../data/weddingData.js'
 
 export default function Story() {
   return (
     <section id="story" className="band alt" aria-labelledby="story-h">
       <div className="section">
         <SectionHead id="story-h" title="Our Story" sub="Two families, one celebration." />
-        <div className="people">
-          <Person p={story.groom} />
-          <Person p={story.bride} flip />
+        <div className="story-photo-wrap" data-reveal>
+          <div className="story-photo-frame">
+            <img src={`${import.meta.env.BASE_URL}images/cards/couple.jpg`} alt={`${couple.groom} & ${couple.bride}`} loading="lazy" />
+          </div>
+          <p className="story-names script-md">{couple.groom} <span>&</span> {couple.bride}</p>
         </div>
         <div className="bless-box center" data-reveal>
           <h3 className="script-md">With the Blessings of</h3>
