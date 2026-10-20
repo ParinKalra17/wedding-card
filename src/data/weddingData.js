@@ -34,10 +34,10 @@ export const countdownLabel = 'until the celebrations begin'
 export const events = [
   { id: 'vinayak-sthapna', name: 'Vinayak Sthapna', start: '2026-11-23T09:15:00+05:30', time: '9:15 AM', spot: 'Vinayak Sthapna Room', accent: '#B8862B', icon: 'flower', image: asset('cards/vinayak-sthapna.jpg') },
   { id: 'mangal-kalash', name: 'Mangal Kalash', start: '2026-11-23T10:00:00+05:30', time: '10:00 AM', spot: 'The Marutinandan Grand, Entrance', accent: '#B8862B', icon: 'kalash', image: asset('cards/mangal-kalash.jpg') },
-  { id: 'baarat', name: 'Baarat', start: '2026-11-23T10:00:00+05:30', time: '10:00 AM', spot: 'The Marutinandan Grand', accent: '#9B2C2C', icon: 'horse', image: asset('cards/baarat.jpg') },
   { id: 'haldi', name: 'Haldi', start: '2026-11-23T12:30:00+05:30', time: '12:30 PM', spot: 'Main Lawn', accent: '#C98A00', icon: 'sun', image: asset('cards/haldi.jpg') },
   { id: 'sangeet', name: 'Sangeet', start: '2026-11-23T18:30:00+05:30', time: '6:30 PM', spot: 'Main Lawn', accent: '#8C1D3F', icon: 'music', image: asset('cards/sangeet.jpg') },
   { id: 'mayra', name: 'Mayra', start: '2026-11-24T10:00:00+05:30', time: '10 AM', spot: 'Banquet Hall', accent: '#C2447A', icon: 'flower', image: asset('cards/mayra.jpg') },
+  { id: 'baarat', name: 'Baarat', start: '2026-11-24T18:30:00+05:30', time: '6:30 PM', spot: 'The Marutinandan Grand', accent: '#9B2C2C', icon: 'horse', image: asset('cards/baarat.jpg') },
   { id: 'reception-phera', name: 'Reception & Phera', start: '2026-11-24T19:00:00+05:30', time: '7 PM onwards', spot: 'Main Lawn & Poolside', accent: '#8C1D3F', icon: 'lamp', image: asset('cards/reception-phera.jpg') },
 ]
 
@@ -97,6 +97,7 @@ export const contacts = [
 export const nav = [
   { id: 'home', label: 'Home' },
   { id: 'story', label: 'Our Story' },
+
   { id: 'events', label: 'Events' },
   { id: 'venue', label: 'Venue' },
 ]
