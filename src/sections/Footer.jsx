@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="orn" aria-hidden="true"><i /></div>
-      <p className="monogram">{couple.monogram}</p>
+      <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt={couple.monogram} className="footer-logo" width="76" height="72" />
       <p className="script-sm">{couple.groom} weds {couple.bride}</p>
       <p>{couple.dateText} · {venue.name}, {venue.city}</p>
       <p className="lead">{couple.closing}</p>

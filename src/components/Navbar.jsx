@@ -20,7 +20,7 @@ export default function Navbar({ active }) {
     <header className="nav">
       <div className="nav-in">
         <a href="#home" className="brand" onClick={(e) => go(e, 'home')} aria-label={`${couple.groom} and ${couple.bride}, back to top`}>
-          {couple.groom} <span>&amp;</span> {couple.bride}
+          <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt={`${couple.groom} & ${couple.bride}`} className="brand-logo" width="40" height="38" />
         </a>
         <button className="nav-btn" aria-expanded={open} aria-controls="nav-links" aria-label={open ? 'Close menu' : 'Open menu'} onClick={() => setOpen(!open)}>
           <Icon name={open ? 'close' : 'menu'} size={26} />

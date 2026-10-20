@@ -233,13 +233,17 @@ main {
 }
 
 .brand {
-  font: 400 2rem var(--script);
-  color: var(--gold-deep);
+  display: inline-flex;
+  align-items: center;
   text-decoration: none
 }
 
-.brand span {
-  font-size: 1.4rem
+.brand-logo {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0
 }
 
 #nav-links {
@@ -497,6 +501,10 @@ main {
   .hero-date {
     font-size: 1rem;
     letter-spacing: .1em
+  }
+
+  .brand-logo {
+    height: 34px
   }
 }
 
@@ -1304,6 +1312,14 @@ legend {
   flex-direction: column;
   gap: .5rem;
   align-items: center
+}
+
+.footer-logo {
+  height: clamp(60px, 12vw, 76px);
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0.25rem auto
 }
 
 .footer nav {
