@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar.jsx'
 import Hero from './sections/Hero.jsx'
-import Story from './sections/Story.jsx'
 import Events from './sections/Events.jsx'
 import Venue from './sections/Venue.jsx'
 import Footer from './sections/Footer.jsx'
@@ -36,7 +35,6 @@ export default function App() {
       <Navbar active={active} />
       <main>
         <Hero />
-        <Story />
         <Events />
         <Venue />
       </main>

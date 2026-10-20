@@ -2,7 +2,7 @@ import Countdown from '../components/Countdown.jsx'
 import { couple, venue, countdownTarget, countdownLabel } from '../data/weddingData.js'
 
 export default function Hero() {
-  const scroll = (e) => { e.preventDefault(); document.getElementById('story')?.scrollIntoView({ behavior: 'smooth' }) }
+  const scroll = (e) => { e.preventDefault(); document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' }) }
   return (
     <section id="home" className="band" aria-label="Wedding invitation">
       <div className="hero">
@@ -16,7 +16,7 @@ export default function Hero() {
           <p className="hero-venue">{venue.name}, {venue.city}</p>
           <Countdown target={countdownTarget} label={countdownLabel} />
           <div className="cta">
-            <a className="btn" href="#story" onClick={scroll}>Discover our wedding</a>
+            <a className="btn" href="#events" onClick={scroll}>Discover our wedding</a>
           </div>
         </div>
         <div className="hero-art">

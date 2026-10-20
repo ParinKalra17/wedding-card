@@ -96,8 +96,6 @@ export const contacts = [
 
 export const nav = [
   { id: 'home', label: 'Home' },
-  { id: 'story', label: 'Our Story' },
-
   { id: 'events', label: 'Events' },
   { id: 'venue', label: 'Venue' },
 ]
